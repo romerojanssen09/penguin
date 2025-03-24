@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../img/logo.png" sizes="72x72">
+</head>
+
+<body class="bg-white">
+    <nav class="bg-black text-white p-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a class="flex items-center space-x-2" href="index.html">
+                <img src="../img/logo.png" alt="Penguin S&S" class="h-10 w-auto" />
+                <i class="fas fa-penguin text-2xl text-[#E9A664]"></i>
+                <span class="text-xl font-bold">Penguin S&S</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white hover:text-[#E9A664]">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <div id="nav-menu"
+                class="hidden md:flex absolute md:relative top-16 md:top-0 left-0 right-0 bg-black md:bg-transparent p-4 md:p-0 space-y-4 md:space-y-0 md:space-x-6">
+                <a href="../index.html" class="h-10 flex items-center block hover:text-[#E9A664]">Home</a>
+                <div class="relative group w-auto">
+                    <button onclick="toggleDropdown('services-mobile')"
+                        class="w-full h-10 md:w-auto flex items-center justify-between md:justify-start space-x-1 hover:text-[#E9A664]">
+                        <span>Our Services</span>
+                        <i
+                            class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div id="services-mobile"
+                        class="hidden md:group-hover:block md:dropdown-menu bg-black text-white py-2 rounded-lg shadow-lg md:absolute md:z-50 md:w-fit whitespace-nowrap">
+                        <a href="bridal_car_rentals.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-car mr-2"></i>
+                            Bridal Car Rentals</a>
+                        <a href="24_7_towing_services.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-truck-pickup mr-2"></i>
+                            24/7 Towing Services</a>
+                        <a href="trucking.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-truck mr-2"></i>
+                            Trucking Services</a>
+                        <a href="heavy_equipment_rental.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-truck-monster mr-2"></i>
+                            Heavy Equipment Rental</a>
+                        <a href="contruction_&_maintenance.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-helmet-safety mr-2"></i>
+                            Construction & Maintenance</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button onclick="toggleDropdown('products-mobile')"
+                        class="w-full h-10 md:w-auto flex items-center justify-between md:justify-start space-x-1 hover:text-[#E9A664]">
+                        <span>Shop</span>
+                        <i
+                            class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div id="products-mobile"
+                        class="hidden md:group-hover:block md:dropdown-menu bg-black text-white py-2 rounded-lg shadow-lg md:absolute md:z-50 md:w-fit whitespace-nowrap">
+                        <a href="spare_parts.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-cogs mr-2"></i>
+                            Spare Parts</a>
+                        <a href="vehicle_accessories.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-car-alt mr-2"></i>
+                            Vehicle Accessories</a>
+                        <a href="furniture_hotel_&_residential.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-couch mr-2"></i>
+                            Furniture Solutions</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="h-10 flex items-center block hover:text-[#E9A664]">About</a>
+                <a href="contact.html" class="h-10 flex items-center block text-[#E9A664]">Contact Us</a>
+
+            </div>
+
+            <!-- Icons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <div id="searchContainer" class="w-8 transition-all duration-300 flex items-center">
+                    <input type="text" id="searchInput2"
+                        class="hidden bg-transparent border-b border-[#E9A664] focus:outline-none px-2 py-1 w-full"
+                        placeholder="Search...">
+                    <button onclick="expandSearch(2)" class="hover:text-[#E9A664]">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <a href="#" class="hover:text-[#E9A664]"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl font-bold text-black mb-8 text-center">Contact Us</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="bg-black text-white p-8 rounded-lg">
+                    <h2 class="text-2xl font-semibold mb-6">Get in Touch</h2>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-map-marker-alt text-[#E9A664]"></i>
+                            <p>123 Business Street, Metro Manila, Philippines</p>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-phone text-[#E9A664]"></i>
+                            <p>+63 925 551 0987 / 046 230 1426</p>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-envelope text-[#E9A664]"></i>
+                            <p>info.qpssco@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-white hover:text-[#E9A664] transition-colors">
+                                <i class="fab fa-facebook-f text-2xl"></i>
+                            </a>
+                            <a href="#" class="text-white hover:text-[#E9A664] transition-colors">
+                                <i class="fab fa-instagram text-2xl"></i>
+                            </a>
+                            <a href="#" class="text-white hover:text-[#E9A664] transition-colors">
+                                <i class="fab fa-twitter text-2xl"></i>
+                            </a>
+                            <a href="#" class="text-white hover:text-[#E9A664] transition-colors">
+                                <i class="fab fa-linkedin-in text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <h2 class="text-2xl font-semibold mb-6">Send us a Message</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="name">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#E9A664]" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="email">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#E9A664]" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="subject">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#E9A664]" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="message">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#E9A664]" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-[#E9A664] text-black py-3 rounded-lg hover:bg-black hover:text-white transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="mt-16">
+                <h2 class="text-2xl font-semibold mb-6 text-center">Visit Our Location</h2>
+                <div class="w-full h-96 bg-gray-300 rounded-lg">
+                    <!-- Replace with your actual Google Maps embed code -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123488.69122495394!2d120.91910796897416!3d14.58773318760702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8efd99aad53%3A0xb64b39847a866fde!2sMetro%20Manila!5e0!3m2!1sen!2sph!4v1709825148747!5m2!1sen!2sph"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="rounded-lg">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

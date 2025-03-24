@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../img/logo.png" sizes="72x72">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="bg-white">
+    <nav class="bg-black text-white p-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a class="flex items-center space-x-2" href="index.html">
+                <img src="../img/logo.png" alt="Penguin S&S" class="h-10 w-auto" />
+                <i class="fas fa-penguin text-2xl text-[#E9A664]"></i>
+                <span class="text-xl font-bold">Penguin S&S</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white hover:text-[#E9A664]">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <div id="nav-menu"
+                class="hidden md:flex absolute md:relative top-16 md:top-0 left-0 right-0 bg-black md:bg-transparent p-4 md:p-0 space-y-4 md:space-y-0 md:space-x-6">
+                <a href="../index.html" class="h-10 flex items-center block hover:text-[#E9A664]">Home</a>
+                <div class="relative group w-auto">
+                    <button onclick="toggleDropdown('services-mobile')"
+                        class="w-full h-10 md:w-auto flex items-center justify-between md:justify-start space-x-1 hover:text-[#E9A664]">
+                        <span>Our Services</span>
+                        <i
+                            class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div id="services-mobile"
+                        class="hidden md:group-hover:block md:dropdown-menu bg-black text-white py-2 rounded-lg shadow-lg md:absolute md:z-50 md:w-fit whitespace-nowrap">
+                        <a href="bridal_car_rentals.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-car mr-2"></i>
+                            Bridal Car Rentals</a>
+                        <a href="24_7_towing_services.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-truck-pickup mr-2"></i>
+                            24/7 Towing Services</a>
+                        <a href="trucking.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-truck mr-2"></i>
+                            Trucking Services</a>
+                        <a href="heavy_equipment_rental.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-truck-monster mr-2"></i>
+                            Heavy Equipment Rental</a>
+                        <a href="contruction_&_maintenance.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-helmet-safety mr-2"></i>
+                            Construction & Maintenance</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button onclick="toggleDropdown('products-mobile')"
+                        class="w-full h-10 md:w-auto flex items-center justify-between md:justify-start space-x-1 hover:text-[#E9A664]">
+                        <span>Shop</span>
+                        <i
+                            class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div id="products-mobile"
+                        class="hidden md:group-hover:block md:dropdown-menu bg-black text-white py-2 rounded-lg shadow-lg md:absolute md:z-50 md:w-fit whitespace-nowrap">
+                        <a href="spare_parts.html" class="block px-4 py-2 bg-[#E9A664] text-black">
+                            <i class="fas fa-cogs mr-2"></i>
+                            Spare Parts</a>
+                        <a href="vehicle_accessories.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-car-alt mr-2"></i>
+                            Vehicle Accessories</a>
+                        <a href="furniture_hotel_&_residential.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-couch mr-2"></i>
+                            Furniture Solutions</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="h-10 flex items-center block hover:text-[#E9A664]">About</a>
+                <a href="contact.html" class="h-10 flex items-center block hover:text-[#E9A664]">Contact Us</a>
+
+            </div>
+
+            <!-- Icons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <div id="searchContainer" class="w-8 transition-all duration-300 flex items-center">
+                    <input type="text" id="searchInput2"
+                        class="hidden bg-transparent border-b border-[#E9A664] focus:outline-none px-2 py-1 w-full"
+                        placeholder="Search...">
+                    <button onclick="expandSearch(2)" class="hover:text-[#E9A664]">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <a href="#" class="hover:text-[#E9A664]"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container mx-auto px-4 py-16">
+        <!-- Title Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-black mb-4">Spare Parts</h1>
+            <p class="text-xl text-gray-700">Quality replacement parts for vehicles and heavy equipment</p>
+        </div>
+
+        <!-- Categories Section -->
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <!-- Vehicle Parts -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=500" alt="Vehicle Parts"
+                    class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-bold mb-4">Vehicle Parts</h2>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#E9A664] mr-2"></i>
+                            Engine Components
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#E9A664] mr-2"></i>
+                            Brake Systems
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#E9A664] mr-2"></i>
+                            Transmission Parts
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#E9A664] mr-2"></i>
+                            Suspension Components
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="inline-block mt-6 text-[#E9A664] hover:text-black">
+                        View Catalog <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Heavy Equipment Parts -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500"
+                    alt="Heavy Equipment Parts" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-bold mb-4">Heavy Equipment Parts</h2>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#E9A664] mr-2"></i>
+                            Excavator Parts
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#E9A664] mr-2"></i>
+                            Bulldozer Components
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#E9A664] mr-2"></i>
+                            Crane Mechanisms
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#E9A664] mr-2"></i>
+                            Loader Parts
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="inline-block mt-6 text-[#E9A664] hover:text-black">
+                        View Catalog <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Maintenance Parts -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500" alt="Maintenance Parts"
+                    class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h2 class="text-xl font-bold mb-4">Maintenance Parts</h2>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#E9A664] mr-2"></i>
+                            Filters & Fluids
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#E9A664] mr-2"></i>
+                            Belts & Hoses
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#E9A664] mr-2"></i>
+                            Electrical Components
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-[#E9A664] mr-2"></i>
+                            Hydraulic Parts
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="inline-block mt-6 text-[#E9A664] hover:text-black">
+                        View Catalog <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="bg-black text-white rounded-xl p-8 mb-16">
+            <h2 class="text-2xl font-bold text-center mb-8">Why Choose Our Parts</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <i class="fas fa-certificate text-[#E9A664] text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Genuine Parts</h3>
+                    <p class="text-gray-300">Original manufacturer quality</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-award text-[#E9A664] text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Warranty</h3>
+                    <p class="text-gray-300">Guaranteed reliability</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-truck-fast text-[#E9A664] text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Fast Delivery</h3>
+                    <p class="text-gray-300">Quick order fulfillment</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-headset text-[#E9A664] text-3xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Expert Support</h3>
+                    <p class="text-gray-300">Technical assistance</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Process -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-center mb-8">How to Order</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="bg-[#E9A664] rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold">1</span>
+                    </div>
+                    <h3 class="font-bold mb-2">Browse Catalog</h3>
+                    <p class="text-gray-600 text-sm">Select your required parts</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#E9A664] rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold">2</span>
+                    </div>
+                    <h3 class="font-bold mb-2">Request Quote</h3>
+                    <p class="text-gray-600 text-sm">Get pricing information</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#E9A664] rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold">3</span>
+                    </div>
+                    <h3 class="font-bold mb-2">Confirm Order</h3>
+                    <p class="text-gray-600 text-sm">Place your order</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#E9A664] rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold">4</span>
+                    </div>
+                    <h3 class="font-bold mb-2">Delivery</h3>
+                    <p class="text-gray-600 text-sm">Receive your parts</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="bg-gray-50 rounded-xl p-8 text-center">
+            <h2 class="text-2xl font-bold mb-4">Need Help Finding Parts?</h2>
+            <p class="text-gray-600 mb-8">Our team is ready to assist you in finding the right parts for your needs</p>
+            <div class="flex gap-2 flex-col md:flex-row items-center justify-center">
+                <a href="tel:09230868342"
+                    class="bg-black text-white px-8 py-3 rounded-full hover:bg-[#E9A664] transition duration-300 inline-flex items-center">
+                    <i class="fas fa-phone-alt mr-2"></i>
+                    (0923) 086 8342
+                </a>
+                <a href="contact.html"
+                    class="bg-[#E9A664] text-black px-8 py-3 rounded-full hover:bg-black hover:text-white transition duration-300 inline-flex items-center">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Send Inquiry
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

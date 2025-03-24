@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../img/logo.png" sizes="72x72">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="bg-white">
+    <nav class="bg-black text-white p-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a class="flex items-center space-x-2" href="index.html">
+                <img src="../img/logo.png" alt="Penguin S&S" class="h-10 w-auto" />
+                <i class="fas fa-penguin text-2xl text-[#E9A664]"></i>
+                <span class="text-xl font-bold">Penguin S&S</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white hover:text-[#E9A664]">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <div id="nav-menu"
+                class="hidden md:flex absolute md:relative top-16 md:top-0 left-0 right-0 bg-black md:bg-transparent p-4 md:p-0 space-y-4 md:space-y-0 md:space-x-6">
+                <a href="../index.html" class="h-10 flex items-center block hover:text-[#E9A664]">Home</a>
+                <div class="relative group w-auto">
+                    <button onclick="toggleDropdown('services-mobile')"
+                        class="w-full h-10 md:w-auto flex items-center justify-between md:justify-start space-x-1 hover:text-[#E9A664]">
+                        <span>Our Services</span>
+                        <i
+                            class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div id="services-mobile"
+                        class="hidden md:group-hover:block md:dropdown-menu bg-black text-white py-2 rounded-lg shadow-lg md:absolute md:z-50 md:w-fit whitespace-nowrap">
+                        <a href="bridal_car_rentals.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-car mr-2"></i>
+                            Bridal Car Rentals</a>
+                        <a href="24_7_towing_services.html" class="block px-4 py-2 bg-[#E9A664] text-black">
+                            <i class="fas fa-truck-pickup mr-2"></i>
+                            24/7 Towing Services</a>
+                        <a href="trucking.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-truck mr-2"></i>
+                            Trucking Services</a>
+                        <a href="heavy_equipment_rental.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-truck-monster mr-2"></i>
+                            Heavy Equipment Rental</a>
+                        <a href="contruction_&_maintenance.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-helmet-safety mr-2"></i>
+                            Construction & Maintenance</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button onclick="toggleDropdown('products-mobile')"
+                        class="w-full h-10 md:w-auto flex items-center justify-between md:justify-start space-x-1 hover:text-[#E9A664]">
+                        <span>Shop</span>
+                        <i
+                            class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div id="products-mobile"
+                        class="hidden md:group-hover:block md:dropdown-menu bg-black text-white py-2 rounded-lg shadow-lg md:absolute md:z-50 md:w-fit whitespace-nowrap">
+                        <a href="spare_parts.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-cogs mr-2"></i>
+                            Spare Parts</a>
+                        <a href="vehicle_accessories.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-car-alt mr-2"></i>
+                            Vehicle Accessories</a>
+                        <a href="furniture_hotel_&_residential.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-couch mr-2"></i>
+                            Furniture Solutions</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="h-10 flex items-center block hover:text-[#E9A664]">About</a>
+                <a href="contact.html" class="h-10 flex items-center block hover:text-[#E9A664]">Contact Us</a>
+
+            </div>
+
+            <!-- Icons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <div id="searchContainer" class="w-8 transition-all duration-300 flex items-center">
+                    <input type="text" id="searchInput2"
+                        class="hidden bg-transparent border-b border-[#E9A664] focus:outline-none px-2 py-1 w-full"
+                        placeholder="Search...">
+                    <button onclick="expandSearch(2)" class="hover:text-[#E9A664]">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <a href="#" class="hover:text-[#E9A664]"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container mx-auto px-4 py-16">
+        <!-- Title Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-black mb-4">24/7 Towing Services</h1>
+            <p class="text-xl text-gray-700">Fast, reliable, and professional towing services available round the clock
+            </p>
+        </div>
+
+        <!-- Emergency Contact Banner -->
+        <div class="bg-[#E9A664] text-black p-6 rounded-lg mb-12 flex items-center justify-center space-x-4">
+            <i class="fas fa-phone-alt text-3xl animate-pulse"></i>
+            <div class="text-center">
+                <p class="font-bold text-lg">Emergency Hotline</p>
+                <!-- href="tel:09230868342" -->
+                <a href="#" class="text-2xl font-bold hover:text-white transition-colors">(0923) 086 8342</a>
+            </div>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+            <!-- Service Images -->
+            <div class="grid grid-cols-2 gap-4">
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://penguin.asia/wp-content/uploads/2021/08/4F236444-55EF-40A3-BE00-E36C00CBDCCF-768x350.jpeg"
+                        alt="Towing Service 1"
+                        class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="https://i0.wp.com/penguin.asia/wp-content/uploads/2021/08/9EBB3983-35DA-44A6-8A98-61EA6AB5DA62.jpeg?ssl=1"
+                        alt="Towing Service 2"
+                        class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="relative group overflow-hidden rounded-lg col-span-2">
+                    <img src="https://i2.wp.com/penguin.asia/wp-content/uploads/2021/08/BFB784A3-034C-45B8-AB14-7D50CD8D334F.jpeg?ssl=1"
+                        alt="Towing Service 3"
+                        class="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                </div>
+            </div>
+
+            <!-- Service Description -->
+            <div class="bg-black text-white p-8 rounded-lg">
+                <h2 class="text-2xl font-bold mb-6 text-[#E9A664]">Professional Towing Solutions</h2>
+                <p class="mb-6">We are proud to inform you that we can handle any type of towing requirements, no matter
+                    how complex or complicated.</p>
+
+                <h3 class="font-bold mb-4 text-[#E9A664]">Required Information:</h3>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-center space-x-3">
+                        <i class="fas fa-map-marker-alt text-[#E9A664]"></i>
+                        <span>Pick up point</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fas fa-map-pin text-[#E9A664]"></i>
+                        <span>Drop off point</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fas fa-car text-[#E9A664]"></i>
+                        <span>Vehicle type</span>
+                    </li>
+                </ul>
+                <p class="text-gray-300">We are committed to provide fast, affordable, reliable towing and recovery
+                    services available 24/7.</p>
+            </div>
+        </div>
+
+        <!-- Services Offered -->
+        <div class="bg-gray-50 rounded-xl p-8 mb-16">
+            <h2 class="text-2xl font-bold text-center mb-12">Our Towing Services</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-[#E9A664] text-3xl mb-4">
+                        <i class="fas fa-truck-pickup"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">24-Hour Towing</h3>
+                    <p class="text-gray-600 text-sm">Round-the-clock emergency towing and roadside assistance</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-[#E9A664] text-3xl mb-4">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Light-Duty Towing</h3>
+                    <p class="text-gray-600 text-sm">Specialized towing for cars, motorcycles, and light vehicles</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-[#E9A664] text-3xl mb-4">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Flatbed Towing</h3>
+                    <p class="text-gray-600 text-sm">Safe and secure flatbed transportation for all vehicles</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-[#E9A664] text-3xl mb-4">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Long-Distance Towing</h3>
+                    <p class="text-gray-600 text-sm">Reliable long-distance towing services nationwide</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center">
+            <h2 class="text-2xl font-bold mb-6">Need Immediate Assistance?</h2>
+            <div class="space-x-4">
+                <!-- tel:09230868342 -->
+                <a href="#"
+                    class="bg-[#E9A664] text-black px-8 py-3 rounded-full hover:bg-black hover:text-white transition duration-300 inline-flex items-center">
+                    <i class="fas fa-phone-alt mr-2"></i>
+                    Call Now
+                </a>
+                <a href="contact.html"
+                    class="bg-black text-white px-8 py-3 rounded-full hover:bg-[#E9A664] hover:text-black transition duration-300 inline-flex items-center">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Get Quote
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../img/logo.png" sizes="72x72">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="bg-white">
+    <nav class="bg-black text-white p-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a class="flex items-center space-x-2" href="index.html">
+                <img src="../img/logo.png" alt="Penguin S&S" class="h-10 w-auto" />
+                <i class="fas fa-penguin text-2xl text-[#E9A664]"></i>
+                <span class="text-xl font-bold">Penguin S&S</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white hover:text-[#E9A664]">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <div id="nav-menu"
+                class="hidden md:flex absolute md:relative top-16 md:top-0 left-0 right-0 bg-black md:bg-transparent p-4 md:p-0 space-y-4 md:space-y-0 md:space-x-6">
+                <a href="../index.html" class="h-10 flex items-center block hover:text-[#E9A664]">Home</a>
+                <div class="relative group w-auto">
+                    <button onclick="toggleDropdown('services-mobile')"
+                        class="w-full h-10 md:w-auto flex items-center justify-between md:justify-start space-x-1 hover:text-[#E9A664]">
+                        <span>Our Services</span>
+                        <i
+                            class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div id="services-mobile"
+                        class="hidden md:group-hover:block md:dropdown-menu bg-black text-white py-2 rounded-lg shadow-lg md:absolute md:z-50 md:w-fit whitespace-nowrap">
+                        <a href="bridal_car_rentals.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-car mr-2"></i>
+                            Bridal Car Rentals</a>
+                        <a href="24_7_towing_services.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-truck-pickup mr-2"></i>
+                            24/7 Towing Services</a>
+                        <a href="trucking.html" class="block px-4 py-2 bg-[#E9A664] text-black">
+                            <i class="fas fa-truck mr-2"></i>
+                            Trucking Services</a>
+                        <a href="heavy_equipment_rental.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-truck-monster mr-2"></i>
+                            Heavy Equipment Rental</a>
+                        <a href="contruction_&_maintenance.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-helmet-safety mr-2"></i>
+                            Construction & Maintenance</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button onclick="toggleDropdown('products-mobile')"
+                        class="w-full h-10 md:w-auto flex items-center justify-between md:justify-start space-x-1 hover:text-[#E9A664]">
+                        <span>Shop</span>
+                        <i
+                            class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div id="products-mobile"
+                        class="hidden md:group-hover:block md:dropdown-menu bg-black text-white py-2 rounded-lg shadow-lg md:absolute md:z-50 md:w-fit whitespace-nowrap">
+                        <a href="spare_parts.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-cogs mr-2"></i>
+                            Spare Parts</a>
+                        <a href="vehicle_accessories.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-car-alt mr-2"></i>
+                            Vehicle Accessories</a>
+                        <a href="furniture_hotel_&_residential.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-couch mr-2"></i>
+                            Furniture Solutions</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="h-10 flex items-center block hover:text-[#E9A664]">About</a>
+                <a href="contact.html" class="h-10 flex items-center block hover:text-[#E9A664]">Contact Us</a>
+
+            </div>
+
+            <!-- Icons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <div id="searchContainer" class="w-8 transition-all duration-300 flex items-center">
+                    <input type="text" id="searchInput2"
+                        class="hidden bg-transparent border-b border-[#E9A664] focus:outline-none px-2 py-1 w-full"
+                        placeholder="Search...">
+                    <button onclick="expandSearch(2)" class="hover:text-[#E9A664]">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <a href="#" class="hover:text-[#E9A664]"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container mx-auto px-4 py-16">
+        <!-- Title Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-black mb-4">Trucking Services</h1>
+            <p class="text-xl text-gray-700">Professional and reliable trucking solutions for your cargo needs</p>
+        </div>
+
+        <!-- Service Overview -->
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-black">Available Truck Types</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4 bg-gray-50 p-4 rounded-lg">
+                        <i class="fas fa-truck text-[#E9A664] text-2xl"></i>
+                        <div>
+                            <h3 class="font-bold">6-Wheeler Truck</h3>
+                            <p class="text-gray-600">Ideal for medium-sized cargo</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 bg-gray-50 p-4 rounded-lg">
+                        <i class="fas fa-truck-moving text-[#E9A664] text-2xl"></i>
+                        <div>
+                            <h3 class="font-bold">10-Wheeler Truck</h3>
+                            <p class="text-gray-600">Perfect for larger deliveries</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 bg-gray-50 p-4 rounded-lg">
+                        <i class="fas fa-truck-loading text-[#E9A664] text-2xl"></i>
+                        <div>
+                            <h3 class="font-bold">Wing Van</h3>
+                            <p class="text-gray-600">Enclosed cargo protection</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-[#E9A664] text-black p-6 rounded-lg">
+                    <p class="font-bold text-lg mb-2">Get a Quote Today</p>
+                    <a href="tel:09230868342" class="text-2xl font-bold hover:text-white transition-colors">
+                        (0923) 086 8342
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <img src="https://i2.wp.com/penguin.asia/wp-content/uploads/2021/08/F00BD04A-1733-4F00-A4A7-57BDE219DC2D.png?ssl=1"
+                    alt="Truck Service 1" class="rounded-lg w-full h-48 object-cover">
+                <img src="https://penguin.asia/wp-content/uploads/2021/08/4F236444-55EF-40A3-BE00-E36C00CBDCCF-768x350.jpeg"
+                    alt="Truck Service 2" class="rounded-lg w-full h-48 object-cover">
+            </div>
+        </div>
+
+        <!-- Services Offered -->
+        <div class="bg-black text-white rounded-xl p-8 mb-16">
+            <h2 class="text-2xl font-bold mb-8 text-center text-[#E9A664]">Our Trucking Services</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="border border-[#E9A664] rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Local Delivery</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#E9A664]"></i>
+                            <span>Metro Manila delivery</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#E9A664]"></i>
+                            <span>Same-day delivery options</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#E9A664]"></i>
+                            <span>Flexible scheduling</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="border border-[#E9A664] rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Provincial Delivery</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#E9A664]"></i>
+                            <span>Nationwide coverage</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#E9A664]"></i>
+                            <span>Long-haul transport</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#E9A664]"></i>
+                            <span>Regular routes available</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="border border-[#E9A664] rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Special Cargo</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#E9A664]"></i>
+                            <span>Construction materials</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#E9A664]"></i>
+                            <span>Heavy equipment</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-check text-[#E9A664]"></i>
+                            <span>Bulk cargo transport</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Requirements Section -->
+        <div class="bg-gray-50 rounded-xl p-8 mb-16">
+            <h2 class="text-2xl font-bold text-center mb-8">Booking Requirements</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h3 class="font-bold text-lg text-[#E9A664]">Required Information:</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-[#E9A664]"></i>
+                            <span>Pick-up location</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-map-pin text-[#E9A664]"></i>
+                            <span>Delivery destination</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-box text-[#E9A664]"></i>
+                            <span>Cargo type and quantity</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-calendar text-[#E9A664]"></i>
+                            <span>Preferred delivery date</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="font-bold text-lg text-[#E9A664]">Additional Notes:</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-info-circle text-[#E9A664] mt-1"></i>
+                            <span>Advance booking is recommended</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-info-circle text-[#E9A664] mt-1"></i>
+                            <span>Rates vary based on distance and cargo type</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fas fa-info-circle text-[#E9A664] mt-1"></i>
+                            <span>Insurance options available upon request</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center">
+            <h2 class="text-2xl font-bold mb-6">Ready to Book a Truck?</h2>
+            <div class="flex gap-2 flex-col md:flex-row items-center justify-center">
+                <a href="tel:09230868342"
+                    class="bg-[#E9A664] text-black px-8 py-3 rounded-full hover:bg-black hover:text-white transition duration-300 inline-flex items-center">
+                    <i class="fas fa-phone-alt mr-2"></i>
+                    Call for Booking
+                </a>
+                <a href="contact.html"
+                    class="bg-black text-white px-8 py-3 rounded-full hover:bg-[#E9A664] hover:text-black transition duration-300 inline-flex items-center">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Request Quote
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

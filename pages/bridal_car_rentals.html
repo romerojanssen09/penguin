@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../img/logo.png" sizes="72x72">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="bg-white">
+    <nav class="bg-black text-white p-4">
+        <div class="container mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a class="flex items-center space-x-2" href="index.html">
+                <img src="../img/logo.png" alt="Penguin S&S" class="h-10 w-auto" />
+                <i class="fas fa-penguin text-2xl text-[#E9A664]"></i>
+                <span class="text-xl font-bold">Penguin S&S</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white hover:text-[#E9A664]">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <div id="nav-menu"
+                class="hidden md:flex absolute md:relative top-16 md:top-0 left-0 right-0 bg-black md:bg-transparent p-4 md:p-0 space-y-4 md:space-y-0 md:space-x-6">
+                <a href="../index.html" class="h-10 flex items-center block hover:text-[#E9A664]">Home</a>
+                <div class="relative group w-auto">
+                    <button onclick="toggleDropdown('services-mobile')"
+                        class="w-full h-10 md:w-auto flex items-center justify-between md:justify-start space-x-1 hover:text-[#E9A664]">
+                        <span>Our Services</span>
+                        <i
+                            class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div id="services-mobile"
+                        class="hidden md:group-hover:block md:dropdown-menu bg-black text-white py-2 rounded-lg shadow-lg md:absolute md:z-50 md:w-fit whitespace-nowrap">
+                        <a href="bridal_car_rentals.html" class="block px-4 py-2 bg-[#E9A664] text-black">
+                            <i class="fas fa-car mr-2"></i>
+                            Bridal Car Rentals</a>
+                        <a href="24_7_towing_services.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-truck-pickup mr-2"></i>
+                            24/7 Towing Services</a>
+                        <a href="trucking.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-truck mr-2"></i>
+                            Trucking Services</a>
+                        <a href="heavy_equipment_rental.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-truck-monster mr-2"></i>
+                            Heavy Equipment Rental</a>
+                        <a href="contruction_&_maintenance.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-helmet-safety mr-2"></i>
+                            Construction & Maintenance</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button onclick="toggleDropdown('products-mobile')"
+                        class="w-full h-10 md:w-auto flex items-center justify-between md:justify-start space-x-1 hover:text-[#E9A664]">
+                        <span>Shop</span>
+                        <i
+                            class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div id="products-mobile"
+                        class="hidden md:group-hover:block md:dropdown-menu bg-black text-white py-2 rounded-lg shadow-lg md:absolute md:z-50 md:w-fit whitespace-nowrap">
+                        <a href="spare_parts.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-cogs mr-2"></i>
+                            Spare Parts</a>
+                        <a href="vehicle_accessories.html" class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-car-alt mr-2"></i>
+                            Vehicle Accessories</a>
+                        <a href="furniture_hotel_&_residential.html"
+                            class="block px-4 py-2 hover:bg-[#E9A664] hover:text-black">
+                            <i class="fas fa-couch mr-2"></i>
+                            Furniture Solutions</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="h-10 flex items-center block hover:text-[#E9A664]">About</a>
+                <a href="contact.html" class="h-10 flex items-center block hover:text-[#E9A664]">Contact Us</a>
+
+            </div>
+
+            <!-- Icons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <div id="searchContainer" class="w-8 transition-all duration-300 flex items-center">
+                    <input type="text" id="searchInput2"
+                        class="hidden bg-transparent border-b border-[#E9A664] focus:outline-none px-2 py-1 w-full"
+                        placeholder="Search...">
+                    <button onclick="expandSearch(2)" class="hover:text-[#E9A664]">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <a href="#" class="hover:text-[#E9A664]"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container mx-auto px-4 py-16">
+        <!-- Title Section -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-black mb-4">Bridal Car Rentals</h1>
+            <p class="text-xl text-gray-700">Make your special day even more memorable with our luxury vehicles</p>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="relative group overflow-hidden rounded-lg">
+                <img src="https://i0.wp.com/penguin.asia/wp-content/uploads/2019/12/7E66AC38-B37E-4C64-8DFD-5665A76B77A5.jpeg"
+                    alt="Bridal Car 1"
+                    class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <!-- <div class="absolute inset-0 bg-black bg-opacity-90 opacity-0 group-hover:opacity-900 transition-opacity duration-500 flex items-center justify-center">
+                    <span class="text-white text-lg font-semibold">BMW E39</span>
+                </div> -->
+            </div>
+            <div class="relative group overflow-hidden rounded-lg">
+                <img src="https://i2.wp.com/penguin.asia/wp-content/uploads/2021/08/3ADDE5EE-E015-4334-8236-154A454144C1.jpeg?ssl=1-91FB3133B79D.jpeg?ssl=1"
+                    alt="Bridal Car 2"
+                    class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <!-- <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                    <span class="text-white text-lg font-semibold">Luxury Sedan</span>
+                </div> -->
+            </div>
+            <div class="relative group overflow-hidden rounded-lg">
+                <img src="https://i1.wp.com/penguin.asia/wp-content/uploads/2021/08/1BB576CF-0D33-4B81-94ED-4E0747D1E8FB.jpeg?ssl=1"
+                    alt="Bridal Car 3"
+                    class="w-full h-64 object-cover transform transition-transform duration-500 group-hover:scale-110">
+                <!-- <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                    <span class="text-white text-lg font-semibold">Premium Collection</span>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Package Information -->
+        <div class="bg-white rounded-xl shadow-lg p-8 max-w-3xl mx-auto">
+            <h2 class="text-2xl font-bold text-black mb-6">Package Inclusions</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-leaf text-[#E9A664] mt-1"></i>
+                        <p>Bouquet of flowers</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-car text-[#E9A664] mt-1"></i>
+                        <p>VIP blinkers</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-user-tie text-[#E9A664] mt-1"></i>
+                        <p>Driver in semi formal attire</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-clock text-[#E9A664] mt-1"></i>
+                        <p>First 3 hours rate included</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-route text-[#E9A664] mt-1"></i>
+                        <p>Hotel to ceremony transfer</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-glass-cheers text-[#E9A664] mt-1"></i>
+                        <p>Ceremony to reception transfer</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-info-circle text-[#E9A664] mt-1"></i>
+                        <p>Additional fee applies after 3 hours</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing and Contact -->
+            <div class="mt-8 pt-8 border-t border-gray-200">
+                <div class="text-center space-y-4">
+                    <p class="text-xl font-bold">Starting at ₱4,000.00 for BMW E39</p>
+                    <p class="text-gray-600">Price is subject to change without prior notice</p>
+                    <div class="space-y-2">
+                        <p class="font-semibold">For booking assistance:</p>
+                        <p class="text-[#E9A664] text-lg">(0923) 086 8342</p>
+                    </div>
+                    <a href="https://www.facebook.com/tagaytaybridalcar/" target="_blank"
+                        class="inline-flex items-center space-x-2 text-[#E9A664] hover:text-black transition-colors">
+                        <i class="fab fa-facebook"></i>
+                        <span>Follow us on Facebook for updates</span>
+                    </a>
+                    <div class="mt-6">
+                        <a href="contact.html"
+                            class="bg-[#E9A664] text-black px-8 py-3 rounded-full hover:bg-black hover:text-white transition duration-300">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

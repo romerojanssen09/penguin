@@ -1,0 +1,95 @@
+*{
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: #E9A664; /* Background color */
+    color: white;        /* Text color */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.dropdown-menu {
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.group:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Mobile menu transition */
+#nav-menu {
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    #nav-menu {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Loading Animation Styles */
+#loading-screen {
+    opacity: 1;
+    transition: opacity 0.1s ease-out;
+}
+
+#loading-screen.hide {
+    opacity: 0;
+}
+
+.loading-container {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.loading-truck {
+    position: relative;
+    animation: moveTruck 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+}
+
+.loading-road {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 200%;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        #E9A664 0px,
+        #E9A664 50px,
+        transparent 50px,
+        transparent 100px
+    );
+    animation: moveRoad 0.5s linear infinite;
+}
+
+@keyframes moveTruck {
+    0% {
+        transform: translateX(-100%) rotateY(0deg);
+    }
+    100% {
+        transform: translateX(100%) rotateY(0deg);
+    }
+}
+
+@keyframes moveRoad {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100px);
+    }
+}
